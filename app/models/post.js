@@ -4,7 +4,7 @@ var mongoose	= require('mongoose');
 var Schema		= mongoose.Schema;
 
 var PostSchema	= new Schema({
-	name: String
+	name: String,
 	body: String
 });
 
