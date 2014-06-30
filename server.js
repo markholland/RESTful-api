@@ -34,7 +34,7 @@ router.route('/posts')
 	.post(function(req, res) {
 
 		var post = new Post();
-		post.name = req.body.name;
+		post.title = req.body.title;
 		post.body = req.body.body;
 
 		post.save(function(err) {
@@ -75,7 +75,7 @@ router.route('/posts/:post_id')
 				res.send(err);
 		
 			// update name
-			post.name = req.body.name;
+			post.title = req.body.title;
 			post.body = req.body.body;
 
 			// save the post
