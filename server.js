@@ -76,6 +76,7 @@ router.route('/posts/:post_id')
 		
 			// update name
 			post.name = req.body.name;
+			post.body = req.body.body;
 
 			// save the post
 			post.save(function(err) {
