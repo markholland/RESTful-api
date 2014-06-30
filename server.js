@@ -35,6 +35,7 @@ router.route('/posts')
 
 		var post = new Post();
 		post.name = req.body.name;
+		post.body = req.body.body;
 
 		post.save(function(err) {
 			if(err)
