@@ -1,0 +1,12 @@
+curl -X GET "http://afternoon-scrubland-3798.herokuapp.com/api/posts"
+
+
+curl -X POST -d "title=Alice&body=blahblah" "http://afternoon-scrubland-3798.herokuapp.com/api/posts"
+
+
+curl -X PUT -d post_id= -d title=Alicesfsf -d body=blahblah "http://afternoon-scrubland-3798.herokuapp.com/api/posts"
+
+
+
+
+

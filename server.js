@@ -9,6 +9,8 @@ var Post		= require('./app/models/post');
 // URI of db
 mongoose.connect('mongodb://test:test@ds061228.mongolab.com:61228/test-api');
 
+var ObjectId = mongoose.Schema.Types.ObjectId;
+
 app.use(bodyParser());
 
 var port = process.env.PORT || 8080;
@@ -58,7 +60,7 @@ router.route('/posts')
 	.put(function(req, res) {
 
 		// find post
-		Post.findById(req.params.post_id, function(err, post) {
+		Post.findById(req.body.post_id, function(err, post) {
 
 			if(err)
 				res.send(err);
