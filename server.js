@@ -53,6 +53,28 @@ router.route('/posts')
 
 			res.json(posts);
 		});
+	})
+
+	.put(function(req, res) {
+
+		// find post
+		Post.findById(req.params.post_id, function(err, post) {
+
+			if(err)
+				res.send(err);
+		
+			// update name
+			post.title = req.body.title;
+			post.body = req.body.body;
+
+			// save the post
+			post.save(function(err) {
+				if(err)
+					res.send(err);
+
+				res.json({ message: 'Post updated.'})
+			});
+		});
 	});
 
 router.route('/posts/:post_id')
