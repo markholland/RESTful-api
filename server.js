@@ -79,17 +79,7 @@ router.route('/posts')
 		});
 	})
 
-	.delete(function(req, res) {
-		Post.remove({
-			_id: req.body.post_id
-		}, function(err, post) {
-			if(err)
-				res.send(err);
-
-			res.json({message: 'Deleted post with id: '+req.body.post_id});
-		});
-	});
-
+	
 router.route('/posts/:post_id')
 
 	.get(function(req, res) {
